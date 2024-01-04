@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💃🏻💃🏻💃🏻</title>
+    <style>
+		body {
+			display: flex;
+			height: 90vh;
+			background-color: #fee;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+		}
+         #container {
+            display: flex;
+            /*align-items: center;*/
+            justify-content: center;
+            height: 90vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('414701620_688988209891216_8228143437310258408_n.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Set text color to white for better visibility on the background */
+			width:60vh;
+			border: #333 solid 5px;
+        }
+        #result-container {
+			align-items: center;
+			background-position: center;
+            justify-content: center;
+			margin-top: 70vh;
+			height: 20vh;
+			width: 60vh;
+			background: rgba(255, 255,255, .5) ;
+            text-align: center;
+        }
+.all{
+    display: flex;
+}    
+.card {
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
+.card-content {
+  padding: 4px;
+}
+
+.card-content h3 {
+  margin: 0;
+}
+
+.card-content p {
+  margin: 2px 0;
+}
+.glow {
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #e60073, 0 0 16px #e60073, 0 0 20px #e60073, 0 0 24px #e60073, 0 0 28px #e60073;
+  }
+  to {
+    text-shadow: 0 0 8px #fff, 0 0 12px #ff4da6, 0 0 16px #ff4da6, 0 0 20px #ff4da6, 0 0 24px #ff4da6, 0 0 28px #ff4da6, 0 0 32px #ff4da6;
+  }
+}
+    </style>
+</head>
+<body>
+	<div id="container">
+		<div id="result-container">
+			<h1 id="encrypted-info"></h1>
+			<p id="result"><span id="encrypted-info2"></span><strong id="demo" class="glow" ></strong></p>
+	    </div>
+	</div>
+	<script>
+	        document.addEventListener("DOMContentLoaded", function() {
+	            // Function to decrypt the encrypted text
+	            function decryptText(encryptedText, key) {
+	                let decryptedText = '';
+	                for (let i = 0; i < encryptedText.length; i++) {
+	                    decryptedText += String.fromCharCode(encryptedText.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+	                }
+	                return decryptedText;
+	            }
+	
+	            // Get the key from the URL
+	            const urlParams = new URLSearchParams(window.location.search);
+	            const key = urlParams.get('key');
+		    if(key)
+		    {
+		            // Encrypted text
+		            const encryptedText = "1m!;(&8\"<, !#,*8l7<,a\r)$h *7+l-3$*50'4$!e >5o!,+)y,8h *7+l-3$*50'4$!e&-o𪹝𨩙𩉙";
+		
+		            // Decrypt the text
+		            const decryptedText = decryptText(encryptedText, key);
+					
+					key2	= ""
+					for(let i = 0; i < 6; i++)
+						key2 	+=  String.fromCharCode(key.charCodeAt(i))
+		            const decryptedText2 = decryptText("- $-1(&*e >8;we", key2);
+		
+		            // Display the decrypted text on the page
+		            const encryptedInfoElement = document.getElementById("encrypted-info");
+		            encryptedInfoElement.textContent = decryptedText;
+					
+					const encryptedInfoElement2 = document.getElementById("encrypted-info2");
+		            encryptedInfoElement2.textContent = decryptedText2;
+		    }
+	        });
+
+	</script>
+	
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Oct 16, 2024 00:00:00").getTime();
+		
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		
+		  // Get today's date and time
+		  var now = new Date().getTime();
+		    
+		  // Find the distance between now and the count down date
+		  var distance = countDownDate - now;
+		    
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		    
+		  // Output the result in an element with id="demo"
+		  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		  + minutes + "m " + seconds + "s ";
+		    
+		  // If the count down is over, write some text 
+		  if (distance < 0) {
+		    clearInterval(x);
+		    document.getElementById("demo").innerHTML = "EXPIRED";
+		  }
+		}, 1000);
+	</script>
+</body>
+</html>
+	
