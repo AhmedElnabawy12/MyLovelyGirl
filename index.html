@@ -47,6 +47,13 @@
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
+.glow2 {
+  color: #333;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #e60073, 0 0 8px #e60073, 0 0 10px #e60073, 0 0 12px #e60073, 0 0 14px #e60073;
@@ -61,7 +68,10 @@
 	<div id="container">
 		<div id="result-container">
 			<strong id="encrypted-info"></strong>
-			<p id="result"><span id="encrypted-info2"></span><strong id="demo" class="glow" ></strong></p>
+			<br>
+			<strong id="encrypted-info2"></strong>
+			<p id="result"><span id="encrypted-info3"></span><strong id="demo" ></strong></p>
+			<strong class="glow" >Love you with all my heart</strong> 🧡🧡🧡🧡
 	    </div>
 	</div>
 	<script>
@@ -81,22 +91,28 @@
 		    if(key)
 		    {
 		            // Encrypted text
-		            const encryptedText = "1m!;(&8\"<, !#,*8l7<,a\r)$h *7+l-3$*50'4$!e >5o!,+)y,8h *7+l-3$*50'4$!e&-o𪹝𨩙𩉙";
+		            const encryptedText = "1m!;(&8\"<, !#,*8l7<,a";
+		            const encryptedText2 = " (e)0?;v': ,5(.8)d;-6v2651a,1m(+,8o4 >4-('=!e&-o𪆤𨖠𩶠";
 		
 		            // Decrypt the text
 		            const decryptedText = decryptText(encryptedText, key);
+		            const decryptedText2 = decryptText(encryptedText2, key);
 					
 					key2	= ""
 					for(let i = 0; i < 6; i++)
 						key2 	+=  String.fromCharCode(key.charCodeAt(i))
-		            const decryptedText2 = decryptText("- $-1(&*e >8;we", key2);
+		            const decryptedText3 = decryptText("- $-1(&*e >8;we", key2);
 		
 		            // Display the decrypted text on the page
 		            const encryptedInfoElement = document.getElementById("encrypted-info");
-		            encryptedInfoElement.textContent = decryptedText;
+		            encryptedInfoElement.textContent = decryptedText;		            
 					
-					const encryptedInfoElement2 = document.getElementById("encrypted-info2");
+					// Display the decrypted text on the page
+		            const encryptedInfoElement2 = document.getElementById("encrypted-info2");
 		            encryptedInfoElement2.textContent = decryptedText2;
+					
+					const encryptedInfoElement3 = document.getElementById("encrypted-info3");
+		            encryptedInfoElement3.textContent = decryptedText3;
 		    }
 	        });
 
